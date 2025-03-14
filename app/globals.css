@@ -26,6 +26,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.extra-space {
+  padding: 32px;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import ButtonLogin from "@/components/ButtonLogin";
 import ListItems from "@/components/ListItems";
@@ -9,7 +8,6 @@ import pagespeed from "@/app/pagespeed.png";
 export default function Home() {
   const isLoggedIn = true;
   const name = "Val";
-  const greeting1 = `Hello ${isLoggedIn ? name : "there"}`;
 
   return (
     <main>

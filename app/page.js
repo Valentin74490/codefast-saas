@@ -33,7 +33,7 @@ export default function Home() {
           Intégrez ici l'ensemble de vos images pour les convertir en webP
         </h1>
         <div className="opacity-90 mb-10">
-          Transformez vos images aux critères Google
+          Transformez vos images aux criteres Google
         </div >
         <ButtonLogin isLoggedIn={isLoggedIn} name={name}  />
         </div>

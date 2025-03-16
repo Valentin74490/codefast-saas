@@ -30,7 +30,7 @@ export default function Home() {
         <Image src={pagespeed} alt="pagespeed" className="rounded-sm w-96 h-80" />
         <div>
         <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
-          Intégrez ici l'ensemble de vos images pour les convertir en webP
+        <p>C&apos;est une image incroyable</p>
         </h1>
         <div className="opacity-90 mb-10">
           Transformez vos images aux criteres Google

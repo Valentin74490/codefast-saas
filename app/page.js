@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ButtonLogin from "@/components/ButtonLogin";
-import ListItems from "@/components/listItems";
+import ListItems from "@/components/ListItems";
 import FAQListItem from "@/components/FAQListItem";
 import pagespeed from "@/app/pagespeed.png";
 

@@ -9,6 +9,7 @@ export default function Home() {
   const isLoggedIn = true;
   const name = "Val";
 
+
   return (
     <main>
       {/* HEADER */}

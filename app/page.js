@@ -9,6 +9,9 @@ export default function Home() {
   const isLoggedIn = true;
   const name = "Val";
 
+  console.log(process.env.MONGO_URI);
+
+
 
   return (
     <main>

@@ -1,13 +1,18 @@
-"use client";
+
 import Image from "next/image";
 import ButtonLogin from "@/components/ButtonLogin";
 import ListItems from "@/components/ListItems";
 import FAQListItem from "@/components/FAQListItem";
 import pagespeed from "@/app/pagespeed.png";
+import { auth } from "@/auth";
 
-export default function Home() {
-  const isLoggedIn = true;
-  const name = "Val";
+export default async function Home() {
+
+
+
+  const session = await auth()
+  console.log(session);
+
 
   console.log(process.env.MONGO_URI);
 
@@ -24,7 +29,7 @@ export default function Home() {
             <a className="link link-hover" href="#FAQ">FAQ</a>
           </div>
           <div>
-            <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+            <ButtonLogin session={session} />
           </div>
         </div>
       </section>
@@ -39,7 +44,7 @@ export default function Home() {
         <div className="opacity-90 mb-10">
           Transformez vos images aux criteres Google
         </div >
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name}  />
+        <ButtonLogin session={session} />
         </div>
 
       </section>
@@ -65,8 +70,7 @@ export default function Home() {
             <div className="mt-4">
               <ButtonLogin
                 className="mt-8"
-                isLoggedIn={isLoggedIn}
-                name={name}
+                session = {session}
                 extraStyle="w-full"
               />
             </div>

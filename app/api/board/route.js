@@ -1,4 +1,4 @@
-import { NextResponse } from "next/serveur";
+import { NextResponse } from "next/server";
 import { auth } from "@/auth"
 import connectMongo from "@/libs/mongoose";
 import User from "@/models/User";
@@ -15,7 +15,7 @@ export async function POST(req) {
       );
     }
 
-    const session = await auth(js);
+    const session = await auth();
 
     if (!session) {
       return NextResponse.json(

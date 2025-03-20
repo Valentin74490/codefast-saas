@@ -38,6 +38,7 @@ export async function POST(req) {
     return NextResponse.json({})
 
   } catch (e) {
+    console.error("Erreur complète :", e);
     return NextResponse.json({ error: e.message }, {status: 500});
   }
 }

@@ -1,3 +1,6 @@
+import mongoose from "mongoose";
+
+
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -13,7 +16,7 @@ const userSchema = new mongoose.Schema({
   },
   boards: [
     {
-      type: mongoose.Schema.Types.ObjectID,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "Board",
     },
   ],

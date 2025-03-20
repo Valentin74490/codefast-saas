@@ -14,7 +14,7 @@ const FormNewBoard = () => {
     setIsLoading(true);
 
     try {
-      await etch("/api/board", {
+      await fetch("/api/board", {
         method: "POST",
         body: JSON.stringify({
           name,

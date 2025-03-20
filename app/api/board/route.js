@@ -25,7 +25,7 @@ export async function POST(req) {
     }
     await connectMongo();
 
-    const user = await User.findById(session.users.id);
+    const user = await User.findById(session.user.id);
 
     const board = await Board.create({
       userId: user._id,

@@ -38,7 +38,44 @@ export async function POST(req) {
     return NextResponse.json({board})
 
   } catch (e) {
-    console.error("Erreur complète :", e);
     return NextResponse.json({ error: e.message }, {status: 500});
   }
+}
+
+export async function DELETE(req) {
+
+  try {
+    const { searchParams } = req.nextUrl;
+    const boardId = searchParams.get("boardId");
+
+    if (!boardId) {
+      return NextResponse.json(
+        { error: "Projet obligatoire"},
+        { status: 400 }
+      );
+    }
+
+    const session = await auth();
+
+    if (!session) {
+      return NextResponse.json(
+        { error: "Not authorized"},
+        { status: 401}
+      );
+    }
+
+    await Board.deleteOne ({
+      _id: boardId,
+      userId: session?.user?.id,
+    });
+
+    const user = await User.findById(session?.user?.id);
+    user.boards = user.boards.filter((id) => id.toString() !== boardId);
+    await user.save();
+    return NextResponse.json({});
+
+  } catch (e) {
+    return NextResponse.json({ error: e.message }, {status: 500});
+  }
+
 }

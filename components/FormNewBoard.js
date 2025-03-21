@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const FormNewBoard = () => {
   const router = useRouter();
@@ -20,12 +21,17 @@ const FormNewBoard = () => {
 
       const data = await axios.post("api/board", { name });
       setName("");
+      toast.success("Projet ajouté 🦄")
       router.refresh();
 
 
 
     } catch (error) {
-
+      const errorMessage =
+      error.response?.data?.error ||
+      error.message ||
+      "C PT 🥲";
+      toast.error(errorMessage);
     } finally {
       setIsLoading(false)
     }

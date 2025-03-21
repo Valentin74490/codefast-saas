@@ -10,7 +10,7 @@ export async function POST(req) {
 
     if (!body.name) {
       return NextResponse.json(
-        { error: "Board name is required"},
+        { error: "Nom du projet à rajouter avant l'import des photos 🦄"},
         { status: 400}
       );
     }

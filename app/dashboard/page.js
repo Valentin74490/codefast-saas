@@ -3,6 +3,8 @@ import FormNewBoard from "@/components/FormNewBoard";
 import { auth } from "@/auth";
 import connectMongo from "@/libs/mongoose";
 import User from "@/models/User";
+import Board from "@/models/Board";
+
 
 async function getUser() {
   const session = await auth();

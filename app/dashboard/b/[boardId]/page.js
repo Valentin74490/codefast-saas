@@ -29,6 +29,8 @@ export default async function FeedbackBoard({ params }) {
   const { boardId }  = params;
   const board = await getBoard(boardId);
 
+
+
   return (
 
   <main className="bg-base-200 min-h-screen">
@@ -47,10 +49,10 @@ export default async function FeedbackBoard({ params }) {
       <h1 className="font-extrabold text-xl mb-4">
       { board.name }
       </h1>
-      <CardBoardLink boardId={board._id} />
+      <CardBoardLink boardId={board._id.toString()} />
+
       <ButtonDeleteBoard boardId={board._id.toString()} />
       </section>
-
     </main>
   )
 }

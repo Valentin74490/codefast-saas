@@ -5,6 +5,7 @@ import { auth } from "@/auth";
 import connectMongo from "@/libs/mongoose";
 import User from "@/models/User";
 import Board from "@/models/Board";
+import ButtonCheckout from "@/components/ButtonCheckout";
 
 
 async function getUser() {
@@ -20,7 +21,8 @@ export default async function Dasboard() {
     <main className="bg-base-200 min-screen">
       {/* HEADER */}
       <section className="bg-base-100">
-        <div className="mx-auto max-w-5xl px-5 py-3 flex justify-end">
+        <div className="mx-auto max-w-5xl px-5 py-3 flex justify-between">
+          <ButtonCheckout />
           <ButtonLogout />
         </div>
       </section>

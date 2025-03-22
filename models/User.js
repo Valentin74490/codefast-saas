@@ -14,6 +14,17 @@ const userSchema = new mongoose.Schema({
   image: {
     type: String,
   },
+
+  hasAccess: {
+    type: Boolean,
+    default: false,
+  },
+
+  customerId: {
+    type: String,
+  },
+
+
   boards: [
     {
       type: mongoose.Schema.Types.ObjectId,

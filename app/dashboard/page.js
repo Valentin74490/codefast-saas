@@ -4,7 +4,6 @@ import FormNewBoard from "@/components/FormNewBoard";
 import { auth } from "@/auth";
 import connectMongo from "@/libs/mongoose";
 import User from "@/models/User";
-import Board from "@/models/Board";
 import ButtonCheckout from "@/components/ButtonCheckout";
 import ButtonPortal from "@/components/ButtonPortal";
 

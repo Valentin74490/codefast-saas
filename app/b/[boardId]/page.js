@@ -11,7 +11,7 @@ const getBoard = async (boardId) => {
   if (!board) {
     redirect ("/");
   }
-  return Board;
+  return board;
 }
 
 
@@ -19,7 +19,7 @@ const getBoard = async (boardId) => {
 export default async function PublicFeedbackBoard({ params }) {
 
   const { boardId }  = params;
-  const board = await getBoard(boardId);
+  await getBoard(boardId);
 
   return <main> { boardId.name } (public) </main>;
 }

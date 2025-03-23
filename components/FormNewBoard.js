@@ -19,7 +19,7 @@ const FormNewBoard = () => {
 
     try {
 
-      const data = await axios.post("api/board", { name });
+      await axios.post("api/board", { name });
       setName("");
       toast.success("Projet ajouté 🦄")
       router.refresh();

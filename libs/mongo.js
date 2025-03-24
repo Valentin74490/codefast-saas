@@ -31,4 +31,3 @@ import { MongoClient, ServerApiVersion } from "mongodb";
   }
 
   export default clientPromise;
-  

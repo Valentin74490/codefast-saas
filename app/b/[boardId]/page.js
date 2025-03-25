@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import connectMongo from "@/libs/mongoose";
 import Board from "@/models/Board";
+import FormAddPost from "@/components/FormAddPost";
 
 
 const getBoard = async (boardId) => {
@@ -18,8 +19,13 @@ const getBoard = async (boardId) => {
 
 export default async function PublicFeedbackBoard({ params }) {
 
-  const { boardId }  = params;
-  await getBoard(boardId);
 
-  return <main> { boardId.name } (public) </main>;
+  const { boardId }  = params;
+  const board = await getBoard(boardId);
+
+  return (
+  <main className="min-h-screen bg-base-200">
+    { boardId.name } (public)
+    <FormAddPost boardId={boardId} />
+   </main>);
 }

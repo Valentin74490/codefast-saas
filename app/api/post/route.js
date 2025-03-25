@@ -12,7 +12,7 @@ export async function POST(req) {
     const body = await req.json();
     const { title, description } = body;
 
-    const { searchParams } = req.nextUrl
+    const { searchParams } = req.nextUrl;
     const boardId = searchParams.get("boardId");
 
     const badWordsFilter = new Filter();
@@ -25,6 +25,8 @@ export async function POST(req) {
         { status: 400 }
       );
     }
+
+    const session = await auth();
 
     await connectMongo();
 

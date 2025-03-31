@@ -41,6 +41,8 @@ export default async function PublicFeedbackBoard({ params }) {
 
     </section>
 
+    
+
     <section className="max-w-5xl bg-base-200 flex flex-col md:flex-row  items-start gap-8 mx-auto p-5 pb-12">
 
           <FormAddPost boardId={boardId} />

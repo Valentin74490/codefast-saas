@@ -53,7 +53,7 @@ export default async function FeedbackBoard({ params }) {
     </section>
 
 
-    <section className="max-w-5xl mx-auto px-5 py-12 flex flex-col md:flex-row gap-12 items-start">
+    <section className="max-w-5xl mx-auto px-5 py-12 flex flex-col md:flex-row gap-8 items-start">
       <div className="space-y-8">
         <h1 className="font-extrabold text-xl mb-4">
         { board.name }
